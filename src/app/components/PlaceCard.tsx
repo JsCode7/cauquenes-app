@@ -1,4 +1,6 @@
+'use client'
 import Image from "next/image";
+import react, { useState } from "react";
 
 interface PlaceCardProps {
   data: {
@@ -11,9 +13,19 @@ interface PlaceCardProps {
 }
 
 const PlaceCard = ({ data }: PlaceCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
-    <div className="max-w-2xl mx-5">
-      <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm dark:bg-sky-950  dark:border-sky-800">
+    <div className="max-w-[19rem] mx-5">
+      <div className="bg-white max-w-sm">
         <a href="#" className="block w-full h-48 overflow-hidden">
           <Image
             className="object-cover h-full rounded-t-lg"
@@ -25,22 +37,25 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
             alt=""
           />
         </a>
-        <div className="p-5">
+        <div className="py-5">
           <a href="#">
-            <h5 className="text-gray-900 font-bold text-2xl tracking-tight mb-2 dark:text-white">
+            <h5 className="text-gray-900 font-bold text-1xl tracking-tight mb-2">
               {data.Place}
             </h5>
           </a>
-          <p className="font-normal text-gray-700 mb-3 dark:text-gray-400">
-            {data.Address}
-          </p>
+          <p className="font-normal text-[#9ca3af] mb-3">{data.Address}</p>
           <a
             href={data.MapsUrl}
-            className="text-white bg-sky-800 hover:bg-sky-800 focus:ring-4 focus:ring-sky-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center  dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800"
+            id="map-link"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="text-white font-medium text-sm py-2 text-center inline-flex items-center"
           >
             Conocer ubicación
             <svg
-              className="-mr-1 ml-2 h-4 w-4"
+              className={`-mr-1 ml-2 h-[14px] w-[14px] transition-transform duration-300 transform-gpu ${
+                isHovered ? "translate-x-4" : ""
+              }`}
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

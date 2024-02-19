@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Menu } from "./components/Menu";
+import  MainSection from "./components/MainSection";
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -25,10 +26,11 @@ export default function RootLayout({
       <head>
         <title>Cauquenes App</title>
       </head>
-      <body className="relative">
+      <body className="relative py-8">
         <Menu />
-        <main className="h-screen flex-1 p-7 pl-28">{children}</main>
+        <MainSection>{children}</MainSection>
       </body>
+      
     </html>
   );
 }

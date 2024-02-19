@@ -1,5 +1,11 @@
 import PlaceCard from "../components/PlaceCard";
 import { placesData } from "../data/data";
+import TitleSection from "../components/TitleSection";
+
+const titleData = {
+  name: 'Supermercados y negocios',
+  description: 'En esta sección encontrarás información sobre los supermercados o negocios de la comuna de Cauquenes.'
+}
 
 export default function markets() {
   const marketsData = placesData.filter(
@@ -7,13 +13,8 @@ export default function markets() {
   );
   return (
     <>
-      <h1 className="text-white text-2xl font-bold mb-4">
-        Supermercados o negocios
-      </h1>
-      <p className="text-white mb-4">
-        En esta sección encontrarás información sobre los supermercados o
-        negocios de la comuna de Cauquenes.
-      </p>
+      <TitleSection data={titleData} />  
+
       <div className="flex">
         {marketsData.map((place) => (
           <PlaceCard key={place.Place} data={place} />
