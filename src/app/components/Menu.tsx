@@ -39,15 +39,15 @@ export function Menu() {
 
   return (
     <div className="absolute left-0">
-      <div className={`${abierto ? 'w-72' : 'w-20'} h-screen bg-sky-950 p-2`}>
+      <div className={`${abierto ? 'w-72' : 'w-20'} h-screen bg-white p-2`}>
         <div className={`${abierto ? 'items-end' : 'items-center'} w-4/5 flex flex-col`}>
-          <HiMenuAlt3 size={26} className="cursor-pointer mt-4 fill-white" onClick={handleToggleMenu} />
+          <HiMenuAlt3 size={26} className="cursor-pointer mt-4 fill-[#6b7280]" onClick={handleToggleMenu} />
         </div>
         <ul className="pt-6">
           {links.map(({ label, route, icon }) => (
             <li key={route} className="flex">
               <a href={route} className="flex m-4">
-                <span className="w-4 h-5">{React.createElement(icon, { size: '23', fill: 'white' })}</span>
+                <span className="w-4 h-5">{React.createElement(icon, { size: '23', fill: '#6b7280' })}</span>
                 <div
                   className={`origin-left whitespace-pre duration-500 pl-5 justify-center align-middle text-white ${
                     !abierto && 'hidden'
