@@ -9,13 +9,13 @@ const titleData = {
 
 export default function markets() {
   const marketsData = placesData.filter(
-    (place) => place.Category === "Supermercado" && place.Address !== null
+    (place) => place.Category === "Supermercado" || place.Category === "Negocios" && place.Address !== null
   );
   return (
     <>
       <TitleSection data={titleData} />  
 
-      <div className="flex">
+      <div className="grid grid-cols-5 gap-4 gap-y-8">
         {marketsData.map((place) => (
           <PlaceCard key={place.Place} data={place} />
         ))}

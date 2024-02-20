@@ -460,13 +460,6 @@ export const placesData = [
       "ImagePath": "/images/sar.png"
     },
     {
-      "Place": "Terpel",
-      "Address": "Antonio Varas 1090",
-      "MapsUrl": "https://goo.gl/maps/eDrHcuCA1zpdJiDo9",
-      "Category": "Servicios",
-      "ImagePath": "/images/terpel.png"
-    },
-    {
       "Place": "Mutual ",
       "Address": "Chacabuco 436",
       "MapsUrl": "https://goo.gl/maps/Tqyw3jud2vJvmC4b8",

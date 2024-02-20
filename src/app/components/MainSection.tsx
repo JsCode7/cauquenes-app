@@ -6,6 +6,6 @@ export default function RootLayout({
     children: React.ReactNode;
   }>) {
   return (
-     <main className="h-screen flex-1 pl-28">{children}</main>
+     <main className="h-screen flex-1 pl-28 py-8">{children}</main>
   )
 }

@@ -1,6 +1,8 @@
 import { BiHomeAlt, BiStore } from 'react-icons/bi';
 import { BsFillTreeFill } from 'react-icons/bs';
 import { FaBriefcaseMedical } from 'react-icons/fa';
+import { IoFootballOutline } from "react-icons/io5";
+import { FiMapPin } from "react-icons/fi";
 
 export const links = [
     {
@@ -23,4 +25,15 @@ export const links = [
       route: '/markets',
       icon: BiStore,
     },
+    {
+      label: 'Deportes',
+      route: '/sports',
+      icon: IoFootballOutline,
+    },
+    {
+      label: 'Servicios',
+      route: '/services',
+      icon: FiMapPin,
+    },
+
   ];

@@ -26,7 +26,7 @@ export default function RootLayout({
       <head>
         <title>Cauquenes App</title>
       </head>
-      <body className="relative py-8">
+      <body className="relative bg-[white]">
         <Menu />
         <MainSection>{children}</MainSection>
       </body>

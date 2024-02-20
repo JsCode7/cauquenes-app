@@ -15,7 +15,7 @@ export default function emergency() {
         <>
         <TitleSection data={titleData} />  
         
-        <div className="flex">
+        <div className="grid grid-cols-5 gap-4 gap-y-8">
         {emergencyData.map((place) => (
           <PlaceCard key={place.Place} data={place} />
         ))}

@@ -24,11 +24,11 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
   };
 
   return (
-    <div className="max-w-[19rem] mx-5">
+    <div className="max-w-[19rem]  mx-5">
       <div className="bg-white max-w-sm">
-        <a href="#" className="block w-full h-48 overflow-hidden">
+        <a href="#" className="block w-full h-64 overflow-hidden">
           <Image
-            className="object-cover h-full rounded-t-lg"
+            className="object-cover h-full rounded-lg"
             src={data.ImagePath || "/images/abcdin.png"}
             width={500}
             height={500}
@@ -37,7 +37,7 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
             alt=""
           />
         </a>
-        <div className="py-5">
+        <div className="pt-3 pb-5">
           <a href="#">
             <h5 className="text-gray-900 font-bold text-1xl tracking-tight mb-2">
               {data.Place}

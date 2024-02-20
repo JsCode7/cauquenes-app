@@ -38,7 +38,7 @@ export function Menu() {
   };
 
   return (
-    <div ref={menuRef} className="absolute">
+    <div ref={menuRef} className="absolute py-8">
       <div
         className={`transition-all duration-300 ${
           abierto ? "w-64 bg-[white]" : "w-20"
