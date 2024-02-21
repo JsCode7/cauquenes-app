@@ -1,6 +1,7 @@
 'use client'
 import Image from "next/image";
 import react, { useState } from "react";
+import Link from "next/link";
 
 interface PlaceCardProps {
   data: {
@@ -14,6 +15,7 @@ interface PlaceCardProps {
 
 const PlaceCard = ({ data }: PlaceCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const slugWithDashes = data.Place?.replace(/ /g, '-') || '';
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -26,7 +28,7 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
   return (
     <div className="max-w-[19rem]  mx-5">
       <div className="bg-white max-w-sm">
-        <a href="#" className="block w-full h-64 overflow-hidden">
+        <Link href={`${slugWithDashes}`} className="block w-full h-64 overflow-hidden">
           <Image
             className="object-cover h-full rounded-lg"
             src={data.ImagePath || "/images/abcdin.png"}
@@ -34,18 +36,18 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
             height={500}
             priority={true}
             quality={100}
-            alt=""
+            alt={data.Place || "Imagen del lugar"}
           />
-        </a>
+        </Link>
         <div className="pt-3 pb-5">
-          <a href="#">
+          <Link href={`${slugWithDashes}`}>
             <h5 className="text-gray-900 font-bold text-1xl tracking-tight mb-2">
               {data.Place}
             </h5>
-          </a>
+          </Link>
           <p className="font-normal text-[#9ca3af] mb-3">{data.Address}</p>
-          <a
-            href={data.MapsUrl}
+          <Link
+            href={data.MapsUrl || "/"}
             id="map-link"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
@@ -66,7 +68,7 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
                 clipRule="evenodd"
               ></path>
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

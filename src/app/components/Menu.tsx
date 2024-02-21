@@ -38,9 +38,9 @@ export function Menu() {
   };
 
   return (
-    <div ref={menuRef} className="absolute py-8">
+    <div ref={menuRef} className="absolute py-8 z-10 transition-all duration-300">
       <div
-        className={`transition-all duration-300 ${
+        className={`${
           abierto ? "w-64 bg-[white]" : "w-20"
         } h-screen px-2 pt-[5px] shadow-xl`}
       >
@@ -49,11 +49,13 @@ export function Menu() {
             abierto ? "items-end" : "items-center"
           } w-4/5 flex flex-col`}
         >
+          <div className="flex">{abierto ? (<span className="mr-4">Cauquenes App</span>): ('')}
           <HiMenuAlt3
             size={26}
             className="cursor-pointer fill-[#6b7280]"
             onClick={handleToggleMenu}
-          />
+          /></div>
+          
         </div>
         <ul
           className={`pt-6 leading-[1]`}

@@ -1,51 +1,37 @@
 'use client'
 import React, { useState } from "react";
-
-interface Place {
-    Place?: string;
-    Address?: string | null;
-    MapsUrl?: string;
-    Category?: string;
-    ImagePath?: string | undefined;
-  }
+import { Place } from "@/app/interfaces/place.interface";
 
 interface SearchBarProps {
   places: Place[];
+  onFilterChange: (filteredPlaces: Place[]) => void;
 }
-export default function SearchBar({ places }: SearchBarProps) {
+
+export default function SearchBar({ places, onFilterChange }: SearchBarProps) {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPlaces = places.filter(
-    (place) =>
-      place.Place?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      place.Address?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
+    const searchTerm = event.target.value.toLowerCase();
+    setSearchTerm(searchTerm);
+
+    const filteredPlaces = places.filter(
+      (place) =>
+        place.Place?.toLowerCase().includes(searchTerm) ||
+        (place.Address && place.Address.toLowerCase().includes(searchTerm))
+    );
+
+    onFilterChange(filteredPlaces);
   };
+
   return (
-    <div className="relative">
+    <div className="relative mb-8 pl-[1.25rem]">
       <input
         type="text"
         placeholder="Buscar..."
-        className="w-full border rounded-md py-2 pl-3 pr-10 focus:outline-none focus:border-blue-500"
+        className="w-[30rem] border border-[#bbbbbb] rounded-2xl py-3 pl-3 pr-10 focus:outline-none focus:border-[#000000] transition-all duration-300"
         value={searchTerm}
         onChange={handleChange}
       />
-      <ul className="absolute z-10 bg-white w-full border border-gray-300 rounded-b-md mt-1 overflow-hidden">
-        {filteredPlaces.map((place, index) => (
-          <li
-            key={index}
-            className="px-3 py-2 hover:bg-gray-100 cursor-pointer"
-          >
-            <a href={place.MapsUrl} target="_blank" rel="noopener noreferrer">
-              <div>{place.Place}</div>
-              <div className="text-xs text-gray-500">{place.Address}</div>
-            </a>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

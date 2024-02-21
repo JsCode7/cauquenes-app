@@ -1,8 +1,10 @@
-import Image from "next/image";
+"use client";
+import { useState } from "react";
 import TitleSection from "./components/TitleSection";
 import { placesData } from "@/app/data/data";
-import PlaceCard from "./components/PlaceCard";
+import { Place } from "@/app/interfaces/place.interface";
 import SearchBar from "./components/SearchBar";
+import PlaceList from "./components/PlacesList";
 
 const titleData = {
   name: "Inicio",
@@ -11,12 +13,17 @@ const titleData = {
 };
 
 export default function Home() {
+  const [filteredPlaces, setFilteredPlaces] = useState<Place[]>([]);
   const allPlaces = placesData;
+
+  const handleFilterChange = (filteredPlaces: Place[]) => {
+    setFilteredPlaces(filteredPlaces);
+  };
   return (
     <>
       <TitleSection data={titleData} />
-      <SearchBar places={allPlaces}/>
-      
+      <SearchBar places={allPlaces} onFilterChange={handleFilterChange} />
+      <PlaceList places={filteredPlaces.length > 0 ? filteredPlaces : allPlaces} />
     </>
   );
 }
