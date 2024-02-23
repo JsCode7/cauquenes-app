@@ -6,6 +6,7 @@ import { Place } from "@/app/interfaces/place.interface";
 import SearchBar from "./components/SearchBar";
 import PlaceList from "./components/PlacesList";
 import SwitchDarkMode from "./components/SwitchDarkMode";
+import { getDataCard } from "./utils/orderData";
 
 const titleData = {
   name: "Inicio",
@@ -16,6 +17,7 @@ const titleData = {
 export default function Home() {
   const [filteredPlaces, setFilteredPlaces] = useState<Place[]>([]);
   const allPlaces = placesData;
+  const dataCard = getDataCard();
 
   const handleFilterChange = (filteredPlaces: Place[]) => {
     setFilteredPlaces(filteredPlaces);

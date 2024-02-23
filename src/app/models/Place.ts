@@ -8,7 +8,12 @@ const Places = new Schema ({
         type: String,
     },
     name: {
-        type: String,
+        text: {
+            type: String,
+        },
+        languageCode: {
+            type: String,
+        }
     },
     types: [
         {

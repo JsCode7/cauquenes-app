@@ -93,7 +93,7 @@ export function Menu() {
             })}
           </ul>
 
-          <ul className="mt-[50dvh]">
+          <ul className="sm-phone:mt-[38dvh] phone:mt-[40dvh] xl-phone:mt-[45] desktop:mt-[50dvh]">
             <SwitchDarkMode />
           </ul>
         </div>
