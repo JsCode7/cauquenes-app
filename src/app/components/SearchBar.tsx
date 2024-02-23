@@ -24,11 +24,11 @@ export default function SearchBar({ places, onFilterChange }: SearchBarProps) {
   };
 
   return (
-    <div className="relative mb-8 pl-[1.25rem]">
+    <div className="relative mb-8 pl-[1.25rem] ">
       <input
         type="text"
         placeholder="Buscar..."
-        className="w-[30rem] border border-[#bbbbbb] rounded-2xl py-3 pl-3 pr-10 focus:outline-none focus:border-[#000000] transition-all duration-300"
+        className="w-[50dvw] border border-[#bbbbbb] rounded-2xl py-3 pl-3 pr-10 focus:outline-none focus:border-[#000000] transition-all duration-300"
         value={searchTerm}
         onChange={handleChange}
       />

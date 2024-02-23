@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Menu } from "./components/Menu";
 import  MainSection from "./components/MainSection";
+import SwitchDarkMode from "./components/SwitchDarkMode";
 
 const poppins = Poppins({
   weight: ['400', '700'],
@@ -26,7 +27,7 @@ export default function RootLayout({
       <head>
         <title>Cauquenes App</title>
       </head>
-      <body className="relative bg-[white]">
+      <body className="relative bg-[white] dark:bg-[#1f2937]">
         <Menu />
         <MainSection>{children}</MainSection>
       </body>

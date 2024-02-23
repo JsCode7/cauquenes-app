@@ -26,11 +26,11 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
   };
 
   return (
-    <div className="max-w-[19rem]  mx-5">
-      <div className="bg-white max-w-sm">
+    <div className="max-w-[19rem] mx-5">
+      <div className="bg-white max-w-sm dark:bg-[#1f2937]">
         <Link href={`${slugWithDashes}`} className="block w-full h-64 overflow-hidden">
           <Image
-            className="object-cover h-full rounded-lg"
+            className="object-cover h-64 rounded-lg"
             src={data.ImagePath || "/images/abcdin.png"}
             width={500}
             height={500}
@@ -41,17 +41,17 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
         </Link>
         <div className="pt-3 pb-5">
           <Link href={`${slugWithDashes}`}>
-            <h5 className="text-gray-900 font-bold text-1xl tracking-tight mb-2">
+            <h5 className="text-gray-900 font-bold text-1xl tracking-tight mb-2 dark:text-white">
               {data.Place}
             </h5>
           </Link>
-          <p className="font-normal text-[#9ca3af] mb-3">{data.Address}</p>
+          <p className="font-normal text-[#bfc1c6] mb-3">{data.Address}</p>
           <Link
             href={data.MapsUrl || "/"}
             id="map-link"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="text-white font-medium text-sm py-2 text-center inline-flex items-center"
+            className="dark:text-white font-medium text-sm py-2 text-center inline-flex items-center"
           >
             Conocer ubicación
             <svg

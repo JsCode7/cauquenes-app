@@ -5,6 +5,7 @@ import { placesData } from "@/app/data/data";
 import { Place } from "@/app/interfaces/place.interface";
 import SearchBar from "./components/SearchBar";
 import PlaceList from "./components/PlacesList";
+import SwitchDarkMode from "./components/SwitchDarkMode";
 
 const titleData = {
   name: "Inicio",
