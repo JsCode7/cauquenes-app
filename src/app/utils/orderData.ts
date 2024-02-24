@@ -6,7 +6,6 @@ import {
 
 export const getDataCard = async () => {
   const apiKey: any = process.env.API_KEY;
-  console.log("este es el api key", apiKey);
   try {
     const response = await fetch("http://localhost:3000/api/dbdata", {
       method: "POST",

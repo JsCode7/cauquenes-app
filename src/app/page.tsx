@@ -17,7 +17,7 @@ const titleData = {
 export default function Home() {
   const [filteredPlaces, setFilteredPlaces] = useState<Place[]>([]);
   const allPlaces = placesData;
-  const dataCard = getDataCard();
+  //const dataCard = getDataCard();
 
   const handleFilterChange = (filteredPlaces: Place[]) => {
     setFilteredPlaces(filteredPlaces);

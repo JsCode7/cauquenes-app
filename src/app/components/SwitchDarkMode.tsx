@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { switchTheme } from "../utils/switchTheme";
 
 export default function SwitchDarkMode() {
-  const [theme, setTheme] = useState("ligth");
+  const [theme, setTheme] = useState("light");
 
   useEffect(() => {
     const htmlElement = document.querySelector("html");

@@ -44,18 +44,18 @@ export function Menu() {
   };
 
   return (
-    <div ref={menuRef} className="py-8 z-10 fixed left-0 dark:bg-[#1f2937]">
+    <div ref={menuRef} className="z-10 fixed left-0 dark:bg-[#1f2937]">
       <div
         className={`${
           abierto ? "w-64 bg-[white] dark:bg-[#1f2937] dark:text-white" : "w-20"
         } h-screen px-2 pt-[5px] shadow-xl dark:shadow-xl dark:shadow-white`}
       >
         <div
-          className={`${
+          className={`w-4/5 flex flex-col ${
             abierto ? "items-end" : "items-center"
-          } w-4/5 flex flex-col`}
+          }`}
         >
-          <div className="flex">
+          <div className="flex pt-8">
             {abierto ? <span className="mr-4">Cauquenes App</span> : ""}
             <HiMenuAlt3
               size={26}
@@ -64,8 +64,8 @@ export function Menu() {
             />
           </div>
         </div>
-        <div className="h-full">
-          <ul className={`pt-6 leading-[1]`}>
+        <div className="h-[auto] flex flex-col justify-between">
+          <ul className={`leading-[1] h-[80dvh] flex flex-col justify-center`}>
             {links.map(({ label, route, icon }) => {
               return (
                 <li key={route} className="flex">
@@ -93,7 +93,7 @@ export function Menu() {
             })}
           </ul>
 
-          <ul className="sm-phone:mt-[38dvh] phone:mt-[40dvh] xl-phone:mt-[45] desktop:mt-[50dvh]">
+          <ul className="h-[10dvh]">
             <SwitchDarkMode />
           </ul>
         </div>

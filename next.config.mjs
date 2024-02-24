@@ -1,13 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
-  },
-};
+import withPWAInit from "@ducanh2912/next-pwa";
 
-export default nextConfig;
+const withPWA = withPWAInit({
+  dest: "public",
+  cacheOnFrontendNav : true,
+  aggressiveFrontEndNavCaching : true,
+  reloadOnOnline : true,
+});
+
+export default withPWA({
+  // Your Next.js config
+});
