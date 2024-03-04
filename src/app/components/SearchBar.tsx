@@ -24,7 +24,7 @@ export default function SearchBar({ places, onFilterChange }: SearchBarProps) {
   };
 
   return (
-    <div className="relative mb-8 pl-[1.25rem] ">
+    <div className="relative mb-8 ">
       <input
         type="text"
         placeholder="Buscar..."

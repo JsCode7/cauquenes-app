@@ -1,4 +1,4 @@
-import { BiHomeAlt, BiStore } from "react-icons/bi";
+import { BiHomeAlt, BiStore, BiSearch } from "react-icons/bi";
 import { BsFillTreeFill } from "react-icons/bs";
 import { FaBriefcaseMedical } from "react-icons/fa";
 import { IoFootballOutline } from "react-icons/io5";

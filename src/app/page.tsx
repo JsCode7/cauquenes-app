@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
-import TitleSection from "./components/TitleSection";
 import { placesData } from "@/app/data/data";
 import { Place } from "@/app/interfaces/place.interface";
 import SearchBar from "./components/SearchBar";
-import PlaceList from "./components/PlacesList";
-import SwitchDarkMode from "./components/SwitchDarkMode";
-import { getDataCard } from "./utils/orderData";
+import HeroSection from "./components/HeroSection";
+import SectionCards from "./components/SectionCards";
+
 
 const titleData = {
   name: "Inicio",
@@ -23,10 +22,10 @@ export default function Home() {
     setFilteredPlaces(filteredPlaces);
   };
   return (
-    <>
-      <TitleSection data={titleData} />
+    <div className="pl-10">
       <SearchBar places={allPlaces} onFilterChange={handleFilterChange} />
-      <PlaceList places={filteredPlaces.length > 0 ? filteredPlaces : allPlaces} />
-    </>
+      <HeroSection />
+      <SectionCards />
+    </div>
   );
 }
