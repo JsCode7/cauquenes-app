@@ -30,7 +30,7 @@ const formatPlaceData = (data: any[]): FormattedPlaceProps[] => {
 export const getAllData = async () => {
   const apiKey: any = process.env.API_KEY;
   try {
-    const response = await fetch("http://localhost:3000/api/dbdata", {
+    const response = await fetch("/api/dbdata", {
       method: "POST",
       headers: {
         "x-api-key": apiKey,
@@ -60,7 +60,7 @@ export const getAllData = async () => {
 export const getEmergencyData = async () => {
   const apiKey: any = process.env.API_KEY;
   try {
-    const response = await fetch("http://localhost:3000/api/categories/emergency", {
+    const response = await fetch("/api/categories/emergency", {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
@@ -87,7 +87,7 @@ export const getEmergencyData = async () => {
 export const getMarketsData = async () => {
   const apiKey: any = process.env.API_KEY;
   try {
-    const response = await fetch("http://localhost:3000/api/categories/markets", {
+    const response = await fetch("/api/categories/markets", {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
@@ -115,7 +115,7 @@ export const getMarketsData = async () => {
 export const getParksData = async () => {
   const apiKey: any = process.env.API_KEY;
   try {
-    const response = await fetch("http://localhost:3000/api/categories/parks", {
+    const response = await fetch("/api/categories/parks", {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
@@ -143,7 +143,7 @@ export const getParksData = async () => {
 export const getServicesData = async () => {
   const apiKey: any = process.env.API_KEY;
   try {
-    const response = await fetch("http://localhost:3000/api/categories/services", {
+    const response = await fetch("/api/categories/services", {
       method: "POST",
       headers: { "x-api-key": apiKey
       },
@@ -172,7 +172,7 @@ export const getServicesData = async () => {
 export const getSportsData = async () => { 
   const apiKey: any = process.env.API_KEY;
   try {
-    const response = await fetch("http://localhost:3000/api/categories/sports", {
+    const response = await fetch("/api/categories/sports", {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
