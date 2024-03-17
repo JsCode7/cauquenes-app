@@ -29,8 +29,9 @@ const formatPlaceData = (data: any[]): FormattedPlaceProps[] => {
 
 export const getAllData = async () => {
   const apiKey: any = process.env.API_KEY;
+  const apiUrl: any = process.env.API_URL;
   try {
-    const response = await fetch("/api/dbdata", {
+    const response = await fetch(`${apiUrl}/dbdata`, {
       method: "POST",
       headers: {
         "x-api-key": apiKey,
@@ -59,8 +60,10 @@ export const getAllData = async () => {
 
 export const getEmergencyData = async () => {
   const apiKey: any = process.env.API_KEY;
+  const apiUrl: any = process.env.API_URL;
+
   try {
-    const response = await fetch("/api/categories/emergency", {
+    const response = await fetch(`${apiUrl}/categories/emergency`, {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
@@ -86,8 +89,9 @@ export const getEmergencyData = async () => {
 
 export const getMarketsData = async () => {
   const apiKey: any = process.env.API_KEY;
+  const apiUrl: any = process.env.API_URL;
   try {
-    const response = await fetch("/api/categories/markets", {
+    const response = await fetch(`${apiUrl}/categories/markets`, {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
@@ -114,8 +118,9 @@ export const getMarketsData = async () => {
 
 export const getParksData = async () => {
   const apiKey: any = process.env.API_KEY;
+  const apiUrl: any = process.env.API_URL;
   try {
-    const response = await fetch("/api/categories/parks", {
+    const response = await fetch(`${apiUrl}categories/parks`, {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
@@ -142,8 +147,9 @@ export const getParksData = async () => {
 
 export const getServicesData = async () => {
   const apiKey: any = process.env.API_KEY;
+  const apiUrl: any = process.env.API_URL;
   try {
-    const response = await fetch("/api/categories/services", {
+    const response = await fetch(`${apiUrl}/categories/services`, {
       method: "POST",
       headers: { "x-api-key": apiKey
       },
@@ -171,8 +177,9 @@ export const getServicesData = async () => {
 
 export const getSportsData = async () => { 
   const apiKey: any = process.env.API_KEY;
+  const apiUrl: any = process.env.API_URL;
   try {
-    const response = await fetch("/api/categories/sports", {
+    const response = await fetch(`${apiUrl}/categories/sports`, {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
