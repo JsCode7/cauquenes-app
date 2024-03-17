@@ -29,7 +29,7 @@ const formatPlaceData = (data: any[]): FormattedPlaceProps[] => {
 
 export const getAllData = async () => {
   const apiKey: any = process.env.API_KEY;
-  const apiUrl: any = process.env.API_URL;
+  const apiUrl: any = process.env.API_URL_PROD;
   try {
     const response = await fetch(`${apiUrl}/dbdata`, {
       method: "POST",
@@ -60,7 +60,7 @@ export const getAllData = async () => {
 
 export const getEmergencyData = async () => {
   const apiKey: any = process.env.API_KEY;
-  const apiUrl: any = process.env.API_URL;
+  const apiUrl: any = process.env.API_URL_PROD;
 
   try {
     const response = await fetch(`${apiUrl}/categories/emergency`, {
@@ -89,7 +89,7 @@ export const getEmergencyData = async () => {
 
 export const getMarketsData = async () => {
   const apiKey: any = process.env.API_KEY;
-  const apiUrl: any = process.env.API_URL;
+  const apiUrl: any = process.env.API_URL_PROD;
   try {
     const response = await fetch(`${apiUrl}/categories/markets`, {
       method: "POST",
@@ -118,7 +118,7 @@ export const getMarketsData = async () => {
 
 export const getParksData = async () => {
   const apiKey: any = process.env.API_KEY;
-  const apiUrl: any = process.env.API_URL;
+  const apiUrl: any = process.env.API_URL_PROD;
   try {
     const response = await fetch(`${apiUrl}categories/parks`, {
       method: "POST",
@@ -147,7 +147,7 @@ export const getParksData = async () => {
 
 export const getServicesData = async () => {
   const apiKey: any = process.env.API_KEY;
-  const apiUrl: any = process.env.API_URL;
+  const apiUrl: any = process.env.API_URL_PROD;
   try {
     const response = await fetch(`${apiUrl}/categories/services`, {
       method: "POST",
@@ -177,7 +177,7 @@ export const getServicesData = async () => {
 
 export const getSportsData = async () => { 
   const apiKey: any = process.env.API_KEY;
-  const apiUrl: any = process.env.API_URL;
+  const apiUrl: any = process.env.API_URL_PROD;
   try {
     const response = await fetch(`${apiUrl}/categories/sports`, {
       method: "POST",
