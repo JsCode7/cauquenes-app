@@ -12,27 +12,27 @@ export const links = [
   },
   {
     label: "Parques",
-    route: "/parks",
+    route: "/parques",
     icon: BsFillTreeFill,
   },
   {
     label: "Emergencias",
-    route: "/emergency",
+    route: "/emergencias",
     icon: FaBriefcaseMedical,
   },
   {
     label: "Supermercados",
-    route: "/markets",
+    route: "/supermercados",
     icon: BiStore,
   },
   {
     label: "Deportes",
-    route: "/sports",
+    route: "/deportes",
     icon: IoFootballOutline,
   },
   {
     label: "Servicios",
-    route: "/services",
+    route: "/servicios",
     icon: FiMapPin,
   },
 ];

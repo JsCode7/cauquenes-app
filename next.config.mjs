@@ -8,5 +8,7 @@ const withPWA = withPWAInit({
 });
 
 export default withPWA({
-  // Your Next.js config
+  images: {
+    domains: ['places.googleapis.com'],
+  },
 });

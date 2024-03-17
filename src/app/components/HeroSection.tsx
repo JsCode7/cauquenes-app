@@ -3,7 +3,6 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <div>
       <div className="relative flex justify-center w-[70%] ">
         <Image
           className="rounded-2xl object-cover h-48 w-96"
@@ -19,7 +18,6 @@ export default function HeroSection() {
             Bienvenidos a Cauquenes App
           </h1>
         </div>
-      </div>
     </div>
 
   );

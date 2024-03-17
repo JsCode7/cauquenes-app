@@ -1,21 +1,20 @@
 'use client'
 import Image from "next/image";
-import react, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 interface PlaceCardProps {
   data: {
-    Place?: string;
-    Address?: string | null;
-    MapsUrl?: string;
-    Category?: string;
-    ImagePath?: string;
+    name: string;
+    url: string;
+    image: any;
+    address: string;
   };
 }
 
-const PlaceCard = ({ data }: PlaceCardProps) => {
+const PlaceCard = ({data}: PlaceCardProps ) => {
   const [isHovered, setIsHovered] = useState(false);
-  const slugWithDashes = data.Place?.replace(/ /g, '-') || '';
+  //const slugWithDashes = data.Place?.replace(/ /g, '-') || '';
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -28,26 +27,26 @@ const PlaceCard = ({ data }: PlaceCardProps) => {
   return (
     <div className="max-w-[19rem] mx-5">
       <div className="bg-white max-w-sm dark:bg-[#1f2937]">
-        <Link href={`${slugWithDashes}`} className="block w-full h-64 overflow-hidden">
+        <Link href={``} className="block w-full h-64 overflow-hidden">
           <Image
             className="object-cover h-64 rounded-lg"
-            src={data.ImagePath || "/images/abcdin.png"}
+            src={ data.image[0] || "/images/not-found-image.png"}
             width={500}
             height={500}
             priority={true}
             quality={100}
-            alt={data.Place || "Imagen del lugar"}
+            alt={"Imagen del lugar"}
           />
         </Link>
         <div className="pt-3 pb-5">
-          <Link href={`${slugWithDashes}`}>
+          <Link href={``}>
             <h5 className="text-gray-900 font-bold text-1xl tracking-tight mb-2 dark:text-white">
-              {data.Place}
+              {data.name || "Nombre del lugar"}
             </h5>
           </Link>
-          <p className="font-normal text-[#bfc1c6] mb-3">{data.Address}</p>
+          <p className="font-normal text-[#bfc1c6] mb-3">{data.address}</p>
           <Link
-            href={data.MapsUrl || "/"}
+            href={data.url || "/"}
             id="map-link"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
