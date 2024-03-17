@@ -6,7 +6,7 @@ export const joinPhotosUri = (photos?: PhotoProps[]): string[] => {
 
     return (photos ?? []).map(photo => {
         const url = `${googlePlacesApi}${photo.name}${configApi}`;
-        return url;    
+        return url;
         }
     );
 };

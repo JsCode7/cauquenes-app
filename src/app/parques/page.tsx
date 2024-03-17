@@ -2,6 +2,7 @@ import PlaceCard from "../components/PlaceCard";
 import { placesData } from "../data/data.js";
 import TitleSection from "../components/TitleSection";
 import PlaceList from "../components/PlacesList";
+import { getParksData } from "../utils/orderData";
 
 const titleData = {
   name: "Parques",
@@ -9,15 +10,13 @@ const titleData = {
     "En esta sección encontrarás información sobre los parques de la comuna de Cauquenes.",
 };
 
-export default function parks() {
-  const parksData = placesData.filter(
-    (place) => place.Category === "Parques" && place.Address !== null
-  );
+export default async function parks() {
+  const dataParks = await getParksData();
 
   return (
     <>
       <TitleSection data={titleData} />
-      <PlaceList places={parksData.length > 0 ? parksData : placesData} />
+      <PlaceList places={dataParks && dataParks.length > 0 ? dataParks : []} />
     </>
   );
 }
