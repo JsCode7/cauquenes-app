@@ -120,7 +120,7 @@ export const getParksData = async () => {
   const apiKey: any = process.env.API_KEY;
   const apiUrl: any = process.env.API_URL_PROD;
   try {
-    const response = await fetch(`${apiUrl}categories/parks`, {
+    const response = await fetch(`${apiUrl}/categories/parks`, {
       method: "POST",
       headers: { "x-api-key": apiKey },
     });
